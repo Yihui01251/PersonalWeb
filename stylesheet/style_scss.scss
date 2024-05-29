@@ -1,0 +1,462 @@
+@charset "UTF-8";
+/* UTF-8編碼確保文件中的中文字符或其他ASCII字符能夠被正確解析和顯示 */
+/* 導入字體 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap");
+
+@import "reset";
+@import "_varible";
+/* 字大小 */
+h1 {
+    font-family: "SimSun", "Noto Serif TC", serif;
+    font-size: 3.3rem;
+    font-weight: 900;
+    font-style: normal;
+}
+h2 {
+    font-family: "SimSun", "Noto Serif TC", serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    font-style: normal;
+}
+h3 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: normal;
+}
+p {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+}
+small {
+    font-family: "Noto Serif TC", serif;
+    font-size: 0.75rem;
+    font-weight: 200;
+    font-style: normal;
+}
+/* Global */
+* {
+    box-sizing: border-box;
+}
+a{
+    &:hover{
+        color: $color-desert;
+    }
+}
+/* Set text color and font for the whole document */
+body {
+    width: 100vw;
+    min-width: 100vh;
+    height: auto;
+    background-color: #c8dbe1;
+    color: #555;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Noto Serif TC",
+        "SimSun", "Open Sans", "Helvetica Neue", sans-serif, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC",
+        "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    background-color: rgba(142, 142, 142, 0.07);
+    box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: row;
+    /* 左右置頂 */
+    justify-content: space-between;
+    /* 上下置中 */
+    align-items: center;
+    padding: 1.1vh 4.3vw;
+}
+/* 導覽列容器 */
+#topBar {
+    width: auto;
+    height: 50px;
+    border-radius: 60px;
+    padding: 10px;
+    background-color: rgba(244, 239, 233, 0.8);
+}
+/* 連結容器 */
+#menu {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+    align-items: center;
+    margin: 0 10px;
+
+    a {
+        padding-bottom: 5px;
+        &:hover {
+            border-bottom: #757575 solid 2px;
+        }
+    }
+}
+main{
+    flex: 1;
+    width: 100%;
+
+}
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: $background-color-beach-white-s;
+
+    display: grid;
+    grid-template-columns: repeat(10,minmax(1,0));
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-items: center;
+
+    padding-bottom: 20px;
+    img{
+        width: 50%;
+        grid-row: 1/3;
+        grid-column: 1;
+
+    }
+    div{
+        grid-row: 1/3;
+        grid-column: 3;
+
+        width: 150px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .copyright{
+        grid-row: 3;
+        grid-column: 2;
+    }
+}
+
+/* 主內容(section) */
+section {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* 按鈕樣式 */
+.button {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 60px;
+    background-color: $btn-color-white;
+    padding: 10px 30px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+    &:active {
+        background-color: $btn-color-grey;
+        color: $font-color-white-s;
+        box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.8);
+    }
+}
+/* 首頁主內容 */
+
+/* banner */
+.index-banner {
+    height: 70vh;
+    margin-bottom: 15vh;
+
+    /* 定位裝飾 */
+    position: relative;
+    /* 增加裝飾 */
+    background-image: url("../../images/decorate-banner.png"), url("../../images/decorate-banner02.png");
+    background-size:
+        72px 102px,
+        45px 45px;
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+        left top,
+        10vw 58vh;
+
+    img {
+        /* {`Yihui’s 個人網站`}方塊*/
+        width: 50vw;
+    }
+
+    &::before {
+        /* 裝飾banner */
+        position: absolute;
+        content: url("../../images/decorate-banner03.png");
+        display: block;
+        width: 63px;
+        height: 63px;
+
+        right: 38vw;
+        bottom: 1vh;
+    }
+
+    &::after {
+        /* 裝飾banner */
+        position: absolute;
+        content: url("../../images/decorate-banner04.png");
+        display: block;
+        width: 93px;
+        height: 150px;
+
+        right: 0;
+        top: 15vh;
+    }
+}
+
+/* 首頁aboutMe容器 */
+.index-aboutMe {
+    height: auto;
+    margin-bottom: 10vh;
+
+    gap: 40px;
+
+    div {
+        /* 裝打招呼+個人照片的容器 */
+        width: 90vw;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 20vw;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+
+        /* 定位裝飾雲 */
+        position: relative;
+
+        &::before {
+            /* 打招呼裝飾雲 */
+            position: absolute;
+            content: url("../../images/decorate-aboutMe02.png");
+
+            display: block;
+            width: auto;
+            height: auto;
+            left: 10vw;
+            bottom: -35vh;
+            z-index: -1;
+        }
+        &::after {
+            position: absolute;
+            content: url("../../images/decorate-aboutMe03.png");
+            background-size: 10vw;
+            display: block;
+            width: 300px;
+            height: 80px;
+            right: 0;
+            bottom: 15vh;
+            z-index: -3;
+        }
+
+        p {
+            /* 打招呼 */
+            width: 20vw;
+            height: 20vh;
+            /* display: block; */
+            position: relative;
+            text-align: center;
+            line-height: 20vh;
+
+            &::after {
+                /* 打招呼裝飾雲 */
+                position: absolute;
+                content: url(../../images/decorate-aboutMe01.png);
+                display: block;
+                width: auto;
+                height: auto;
+                left: -130px;
+                bottom: -65px;
+                z-index: -1;
+            }
+        }
+        img {
+            /* 個人照片 */
+            width: 30%;
+            z-index: -2;
+        }
+    }
+}
+/* 首頁-portfolio容器:標題+div */
+.index-portfolio {
+    height: auto;
+    gap: 15px;
+}
+/* 裝介紹作品集的容器(img+div) */
+.index-portfolioInfo {
+    width: 100vw;
+    height: 50vw;
+    background-image: url(../../images/index-portfolio.png);
+    background-size: 85vw 28vw;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+
+    /* 書 */
+    img {
+        flex: 0 1 auto;
+        width: 15%;
+    }
+}
+
+/* 作品集簡介語 */
+.index-portfolioInfo-content {
+    flex: 0 1 auto;
+    width: 30%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: flex-end;
+}
+/* (你能看到...)容器 */
+.index-portfolioInfo-content-infoTitle {
+    width: auto;
+    height: auto;
+    align-self: flex-start;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+
+    p {
+        /* 加粗 */
+        font-weight: 600;
+    }
+}
+
+/* 首頁-learningNote容器:標題+div+a */
+.index-note {
+    height: auto;
+    gap: 50px;
+    margin-bottom: 10px;
+}
+/*  */
+.index-noteContainer {
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    overflow: hidden;
+}
+/*  */
+.simple-learnNoteComponent {
+    width: 300px;
+    min-height: 185px;
+    background-image: url(../../images/simple_learnNote.png);
+    background-repeat: no-repeat; /* 防止背景圖片重複 */
+    background-size: cover; /* 確保背景圖片填滿整個容器 */
+    background-position: center center; /* 讓背景圖片在容器中置中 */
+    color: $font-color-white-s;
+
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    img{
+        
+    }
+    h3 {
+    }
+    .tag-card {
+        /* 相對位置 */
+        position: absolute;
+        right: 140px;
+        bottom: 30px;
+        //style
+        color: $font-color-deepBlue;
+    }
+}
+
+/*  */
+.index-contact {
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    position: relative;
+    // &::before{
+    //     content: url(../../images/1920wave.png);
+    //     position: absolute;
+    //     width: 100vw;
+    //     height: auto;
+    //     top: -200px;
+    //     z-index: -1;
+
+    // }
+
+    .bg-wave{
+        position: absolute;
+        width: 100vw;
+        height: auto;
+        top: -100px;
+        z-index: -1;
+    }
+    .contact-top {
+        width:30%;
+        height: 250px;
+        line-height: 380px;
+        h2{
+           width: fit-content;
+           margin: 0 auto;
+        }
+    }
+    .contact-bottom{
+        width: 100%;
+        height: 150px;
+       
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        position: relative;
+    &::before{
+        content: url(../../images/beach.png);
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        top: -30px;
+        z-index: -2;
+
+    }
+        img{
+            width:50px;
+            height: 50px;
+        }
+    }
+}

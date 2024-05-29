@@ -5,56 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>怡慧的個人網站</title>
-    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="stylesheet/css/style_scss.css" />
   </head>
   <body>
     <header>
-        <figure><img src="./images/LOCO.png" alt="怡慧個人網站的LOGO"></figure>
-        <nav id="topBar">
-            <ul id="menu">
-            <li><a href="./aboutMe.html">關於我</a></li>
-            <li><a href="./portfolio.html">作品集</a></li>
-            <li><a href="./learningNote.html">學習紀錄</a></li>
-        </ul></nav>
+      <figure><img src="./images/LOCO.png" alt="怡慧個人網站的LOGO" /></figure>
+      <nav id="topBar">
+        <ul id="menu">
+          <li><a href="./aboutMe.html">關於我</a></li>
+          <li><a href="./portfolio.html">作品集</a></li>
+          <li><a href="./learningNote.html">學習紀錄</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="index-banner">
-            <img src="./images/banner.png" alt="">
-        </section>
-        <section class="index-aboutMe">
-            <h2>About Me</h2>
-            <a href="./aboutMe.html" class="button">了解我</a>
-            <div>
-                <p>您好!我是詹怡慧</p>
-                <img src="./images/me.png" alt="怡慧的生活照">
+      <section class="index-banner">
+        <img src="./images/banner.png" alt="" />
+      </section>
+      <section class="index-aboutMe">
+        <h2>關於我</h2>
+        <a href="./aboutMe.html" class="button">了解我</a>
+        <div>
+          <p>您好!我是詹怡慧</p>
+          <img src="./images/me.png" alt="怡慧的生活照" />
+        </div>
+      </section>
+      <section class="index-portfolio">
+        <h2>作品集</h2>
+        <div class="index-portfolioInfo">
+          <img src="./images/index-portfolio-book.png" alt="書" />
+          <div class="index-portfolioInfo-content">
+            <div class="index-portfolioInfo-content-infoTitle">
+              <p>你能</p>
+              <p style="font-size: 1.75rem">看</p>
+              <p>到...</p>
             </div>
-        </section>
-        <section class="index-portfolio">
-            <h2>Portfolio</h2>
-            <div class="index-portfolioInfo">
-                <img src="./images/index-portfolio-book.png" alt="書">
-                <div class="index-portfolioInfo-content">
-                    <div class="index-portfolioInfo-content-infoTitle">
-                        <p>你能</p><p style="font-size: 1.75rem;">看</p><p>到...</p>
-                    </div>
-                    <small>切版、javaScript實作、C#遊戲、設計</small>
-                    <a href="./portfolio.html" class="button">觀看作品集</a></div>
-            </div>
-        </section>
-        <section class="index-note">
-            <h2>LearningNote</h2>
-            <div class="index-noteContainer">
-                <div class="simple-learnNoteComponent">
-                    <h3>文章標題</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus impedit mollitia porro consectetur necessitatibus repellendus. Minus explicabo minima provident ipsum obcaecati numquam repudiandae dolore qui, voluptatum, maiores iusto alias at!</p>
-                </div>
-            </div>
-            <a href="./learningNote.html" class="button">更多</a>
-        </section>
-        <section class="index-contact"></section>
+            <small>scss切版、react、javaScript、C#遊戲、設計</small>
+            <a href="./portfolio.html" class="button">觀看作品集</a>
+          </div>
+        </div>
+      </section>
+      <section class="index-note">
+        <h2>學習紀錄</h2>
+        <div class="index-noteContainer">
+          <a href="#" class="simple-learnNoteComponent">
+            <h3>文章標題</h3>
+            <p class="tag-card">tag</p>
+          </a>
+          <a href="#" class="simple-learnNoteComponent">
+            <h3>文章標題</h3>
+            <p class="tag-card">tag</p>
+          </a>
+          <a href="#" class="simple-learnNoteComponent">
+            <h3>文章標題</h3>
+            <p class="tag-card">tag</p>
+          </a>
+        </div>
+        <a href="./learningNote.html" class="button">更多</a>
+      </section>
+      <section class="index-contact">
+        <img class="bg-wave" src="./images/1920wave.png" alt="" />
+        <div class="contact-top"><h2>聯繫我</h2></div>
+        <div class="contact-bottom">
+          <a href="https://www.facebook.com/zhan.y.hui.92?mibextid=LQQJ4d"
+            ><img src="./images/Facebook.png" alt=""
+          /></a>
+          <p>信箱 : ciuhyi@gmail.com</p>
+        </div>
+      </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <img src="./images/LOCO.png" alt="" />
+      <div><a href="./index.html">首頁</a><a href="./aboutMe.html">關於我</a><a href="./portfolio.html">作品集</a><a href="./learningNote.html">學習紀錄</a></div>
+        <small class="copyright">Copyright© 2024 詹怡慧</small>
+    </footer>
   </body>
 </html>
