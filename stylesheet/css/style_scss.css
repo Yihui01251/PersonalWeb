@@ -180,7 +180,7 @@ h3 {
 
 p {
   font-family: "Noto Serif TC", serif;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 400;
   font-style: normal;
 }
@@ -197,14 +197,17 @@ small {
   box-sizing: border-box;
 }
 
+a {
+  font-size: 1.5rem;
+}
 a:hover {
   color: rgb(189, 170, 156);
 }
 
 /* Set text color and font for the whole document */
 body {
-  width: 100vw;
-  min-width: 100vh;
+  max-width: 100vw;
+  min-height: 100vh;
   height: auto;
   background-color: #c8dbe1;
   color: #555;
@@ -254,7 +257,7 @@ header {
   padding-bottom: 5px;
 }
 #menu a:hover {
-  border-bottom: #757575 solid 2px;
+  border-bottom: rgb(189, 170, 156) solid 2px;
 }
 
 main {
@@ -264,13 +267,13 @@ main {
 
 footer {
   width: 100%;
-  height: 150px;
   background-color: rgba(244, 239, 233, 0.8);
   display: grid;
-  grid-template-columns: repeat(10, minmax(1, 0));
-  grid-auto-rows: auto;
+  grid-template-columns: repeat(3, minmax(150px, 800px));
+  grid-template-rows: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+  padding: 30px;
   padding-bottom: 20px;
 }
 footer img {
@@ -322,6 +325,52 @@ section {
 }
 
 /* 首頁主內容 */
+@keyframes scaleFloat {
+  0% {
+    scale: inherit;
+  }
+  50% {
+    scale: 180%;
+    transform: translate(2vw, 4vh);
+  }
+  100% {
+    scale: inherit;
+  }
+}
+@keyframes scaleFloatLeft {
+  0% {
+    scale: inherit;
+  }
+  50% {
+    scale: 180%;
+    transform: translate(-2vw, 3vh);
+  }
+  100% {
+    scale: inherit;
+  }
+}
+@keyframes scaleChange {
+  0% {
+    scale: inherit;
+  }
+  50% {
+    scale: 120%;
+  }
+  100% {
+    scale: inherit;
+  }
+}
+@keyframes scaleRotate {
+  0% {
+    scale: inherit;
+  }
+  50% {
+    transform: rotate3d(0, -10, 10, -1deg);
+  }
+  100% {
+    scale: inherit;
+  }
+}
 /* banner */
 .index-banner {
   height: 70vh;
@@ -329,24 +378,40 @@ section {
   /* 定位裝飾 */
   position: relative;
   /* 增加裝飾 */
-  background-image: url("../../images/decorate-banner.png"), url("../../images/decorate-banner02.png");
-  background-size: 72px 102px, 45px 45px;
-  background-repeat: no-repeat, no-repeat;
-  background-position: left top, 10vw 58vh;
 }
-.index-banner img {
+.index-banner .decorate-banner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: fit-content;
+  animation: scaleChange 5s 5s infinite;
+}
+.index-banner .decorate-banner2 {
+  position: absolute;
+  left: 18vw;
+  bottom: 1vh;
+  width: fit-content;
+  animation: scaleFloatLeft 5s 3s infinite;
+}
+.index-banner .decorate-banner3 {
+  position: absolute;
+  left: 35vw;
+  top: 10vh;
+  width: fit-content;
+  animation: scaleFloat 5s 4s infinite;
+}
+.index-banner .banner {
   /* {`Yihui’s 個人網站`}方塊*/
   width: 50vw;
+  animation: scaleRotate 5s 0s infinite;
 }
 .index-banner::before {
   /* 裝飾banner */
   position: absolute;
   content: url("../../images/decorate-banner03.png");
-  display: block;
-  width: 63px;
-  height: 63px;
-  right: 38vw;
-  bottom: 1vh;
+  right: 20vw;
+  bottom: 8vh;
+  animation: scaleFloat 5s 2s infinite;
 }
 .index-banner::after {
   /* 裝飾banner */
@@ -357,9 +422,21 @@ section {
   height: 150px;
   right: 0;
   top: 15vh;
+  animation: scaleChange 5s 3s infinite;
 }
 
 /* 首頁aboutMe容器 */
+@keyframes CloudFloat {
+  0% {
+    transform: translate(0vw);
+  }
+  50% {
+    transform: translate(10vw);
+  }
+  100% {
+    transform: translate(12vw);
+  }
+}
 .index-aboutMe {
   height: auto;
   margin-bottom: 10vh;
@@ -385,9 +462,10 @@ section {
   display: block;
   width: auto;
   height: auto;
-  left: 10vw;
-  bottom: -35vh;
+  left: 12vw;
+  bottom: -25vh;
   z-index: -1;
+  animation: CloudFloat 120s 0s 1;
 }
 .index-aboutMe div::after {
   position: absolute;
@@ -414,11 +492,12 @@ section {
   position: absolute;
   content: url(../../images/decorate-aboutMe01.png);
   display: block;
-  width: auto;
+  width: 50%;
   height: auto;
   left: -130px;
   bottom: -65px;
   z-index: -1;
+  animation: CloudFloat 150s 0s 1;
 }
 .index-aboutMe div img {
   /* 個人照片 */
@@ -429,13 +508,13 @@ section {
 /* 首頁-portfolio容器:標題+div */
 .index-portfolio {
   height: auto;
-  gap: 15px;
+  gap: 10vh;
 }
 
 /* 裝介紹作品集的容器(img+div) */
 .index-portfolioInfo {
   width: 100vw;
-  height: 50vw;
+  height: 60vh;
   background-image: url(../../images/index-portfolio.png);
   background-size: 85vw 28vw;
   background-repeat: no-repeat;
@@ -444,7 +523,7 @@ section {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10vw;
+  gap: 5vw;
   /* 書 */
 }
 .index-portfolioInfo img {
@@ -484,6 +563,7 @@ section {
   height: auto;
   gap: 50px;
   margin-bottom: 10px;
+  margin-top: 5vh;
 }
 
 /*  */
@@ -498,50 +578,65 @@ section {
   overflow: hidden;
 }
 
-/*  */
+/* 簡略文章元件 */
 .simple-learnNoteComponent {
-  width: 300px;
+  width: auto;
+  min-width: 300px;
   min-height: 185px;
-  background-image: url(../../images/simple_learnNote.png);
-  background-repeat: no-repeat; /* 防止背景圖片重複 */
-  background-size: cover; /* 確保背景圖片填滿整個容器 */
-  background-position: center center; /* 讓背景圖片在容器中置中 */
+  height: fit-content;
   color: rgb(244, 239, 233);
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 20px;
   position: relative;
+  background-image: url(../../images/simple_learnNote.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .simple-learnNoteComponent .tag-card {
   /* 相對位置 */
   position: absolute;
-  right: 140px;
-  bottom: 30px;
+  right: 150px;
+  bottom: 40px;
   color: rgb(11, 34, 40);
 }
+@media (max-width: 1440px) {
+  .simple-learnNoteComponent .tag-card {
+    right: 140px;
+    bottom: 40px;
+  }
+}
+@media (min-width: 2560px) {
+  .simple-learnNoteComponent .tag-card {
+    right: 290px;
+    bottom: 40px;
+  }
+}
 
-/*  */
+/* 首頁-聯繫我 */
 .index-contact {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.index-contact .bg-wave {
+.index-contact::before {
+  content: url(../../images/1920wave.png);
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: auto;
-  top: -100px;
+  top: -140px;
+  left: 0;
   z-index: -1;
 }
 .index-contact .contact-top {
   width: 30%;
   height: 250px;
-  line-height: 380px;
+  line-height: 290px;
 }
 .index-contact .contact-top h2 {
   width: fit-content;
@@ -560,7 +655,7 @@ section {
 .index-contact .contact-bottom::before {
   content: url(../../images/beach.png);
   position: absolute;
-  width: 100%;
+  width: auto;
   height: 200px;
   top: -30px;
   z-index: -2;
@@ -568,4 +663,111 @@ section {
 .index-contact .contact-bottom img {
   width: 50px;
   height: 50px;
+}
+
+/* 通用在作品集和學習紀錄 */
+.blogArea {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-intro { /*  */
+  max-width: 285px;
+  width: 25%;
+  min-height: 77vh;
+  background: linear-gradient(195deg, #FFEDCB 0%, #FFF5E9 15%, #FFD1B0 56%, #FFEDD0 90%);
+  box-shadow: inset 1px 0 3px 0px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 40px;
+  padding-top: 10vh;
+}
+.section-intro img {
+  width: 118px;
+}
+.section-intro p {
+  line-height: 45px;
+}
+
+.section-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.section-content .btnContainer {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+.section-content .btnContainer button {
+  width: 180px;
+  height: 60px;
+  background-color: rgb(233, 217, 204);
+  opacity: 0.8;
+  border-color: rgba(244, 239, 233, 0.8);
+  border-radius: 10px;
+}
+.section-content .btnContainer button:hover {
+  opacity: 1;
+}
+.section-content .btnContainer button:active {
+  background-color: rgb(189, 170, 156);
+}
+.section-content .contentContainer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(233, 217, 204, 0.8);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10%;
+  padding: 5vw 10vw;
+}
+.section-content .contentContainer .portfolio-file {
+  width: 45%;
+}
+.section-content .contentContainer .tag-card {
+  /* 相對位置 */
+  position: sticky;
+  right: 125px;
+  bottom: 20px;
+  color: rgb(11, 34, 40);
+}
+@media (max-width: 1440px) {
+  .section-content .contentContainer .tag-card {
+    right: 120px;
+    bottom: 40px;
+  }
+}
+@media (min-width: 2560px) {
+  .section-content .contentContainer .tag-card {
+    right: 120px;
+    bottom: 40px;
+  }
+}
+
+.portfolio-file {
+  flex: 0 1 auto;
+  min-height: 165px;
+  height: 25vw;
+  background: url(../../images/portfolio-file.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vw;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio-file h3 {
+  line-height: 3rem;
+}
+.portfolio-file img {
+  width: 75%;
 }/*# sourceMappingURL=style_scss.css.map */
