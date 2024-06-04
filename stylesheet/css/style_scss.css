@@ -180,7 +180,7 @@ h3 {
 
 p {
   font-family: "Noto Serif TC", serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   font-style: normal;
 }
@@ -198,7 +198,7 @@ small {
 }
 
 a {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 a:hover {
   color: rgb(189, 170, 156);
@@ -206,8 +206,9 @@ a:hover {
 
 /* Set text color and font for the whole document */
 body {
-  max-width: 100vw;
-  min-height: 100vh;
+  max-width: 1920px;
+  width: 100vw;
+  min-height: 1080px;
   height: auto;
   background-color: #c8dbe1;
   color: #555;
@@ -233,6 +234,10 @@ header {
   /* 上下置中 */
   align-items: center;
   padding: 1.1vh 4.3vw;
+}
+
+.logo {
+  background: transparent;
 }
 
 /* 導覽列容器 */
@@ -330,8 +335,8 @@ section {
     scale: inherit;
   }
   50% {
-    scale: 180%;
-    transform: translate(2vw, 4vh);
+    scale: 120%;
+    transform: translate(2vw, 2vw);
   }
   100% {
     scale: inherit;
@@ -354,7 +359,7 @@ section {
     scale: inherit;
   }
   50% {
-    scale: 120%;
+    scale: 110%;
   }
   100% {
     scale: inherit;
@@ -371,10 +376,48 @@ section {
     scale: inherit;
   }
 }
+@keyframes runCircle {
+  0% {
+    scale: inherit;
+  }
+  50% {
+    transform: translate(12vw, 12vw);
+  }
+  51% {
+    z-index: 0;
+  }
+  60% {
+    z-index: -1;
+  }
+  90% {
+    z-index: -1;
+  }
+  100% {
+    scale: inherit;
+  }
+}
+@keyframes runCircle1 {
+  0% {
+    scale: inherit;
+  }
+  50% {
+    transform: translate(15vw, 10vw);
+    z-index: 1;
+  }
+  70% {
+    z-index: 0;
+  }
+  90% {
+    z-index: -1;
+  }
+  100% {
+    scale: inherit;
+  }
+}
 /* banner */
 .index-banner {
-  height: 70vh;
-  margin-bottom: 15vh;
+  height: 547px;
+  margin-bottom: 5vw;
   /* 定位裝飾 */
   position: relative;
   /* 增加裝飾 */
@@ -388,41 +431,50 @@ section {
 }
 .index-banner .decorate-banner2 {
   position: absolute;
-  left: 18vw;
-  bottom: 1vh;
+  left: 10%;
+  bottom: -5%;
   width: fit-content;
-  animation: scaleFloatLeft 5s 3s infinite;
+  animation: scaleFloatLeft 15s 0s infinite;
 }
 .index-banner .decorate-banner3 {
   position: absolute;
-  left: 35vw;
-  top: 10vh;
+  right: 0;
+  top: 50%;
   width: fit-content;
-  animation: scaleFloat 5s 4s infinite;
+  animation: scaleChange 5s 4s infinite;
 }
 .index-banner .banner {
   /* {`Yihui’s 個人網站`}方塊*/
-  width: 50vw;
+  width: 50%;
+  margin-top: 50px;
   animation: scaleRotate 5s 0s infinite;
 }
 .index-banner::before {
   /* 裝飾banner */
   position: absolute;
-  content: url("../../images/decorate-banner03.png");
-  right: 20vw;
-  bottom: 8vh;
-  animation: scaleFloat 5s 2s infinite;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: rgba(244, 239, 233, 0.8);
+  border-radius: 10px;
+  box-shadow: inset -5px -5px 4px 0px rgba(8, 63, 72, 0.3);
+  right: 35%;
+  top: 5%;
+  z-index: 1;
+  animation: runCircle1 10s 0s infinite;
 }
 .index-banner::after {
   /* 裝飾banner */
   position: absolute;
-  content: url("../../images/decorate-banner04.png");
-  display: block;
-  width: 93px;
-  height: 150px;
-  right: 0;
-  top: 15vh;
-  animation: scaleChange 5s 3s infinite;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: rgba(244, 239, 233, 0.8);
+  border-radius: 10px;
+  box-shadow: inset -5px -5px 4px 0px rgba(8, 63, 72, 0.3);
+  left: 20%;
+  top: 55%;
+  animation: runCircle 10s 5s infinite;
 }
 
 /* 首頁aboutMe容器 */
@@ -430,19 +482,18 @@ section {
   0% {
     transform: translate(0vw);
   }
-  50% {
-    transform: translate(10vw);
-  }
   100% {
-    transform: translate(12vw);
+    transform: translate(11vw);
   }
 }
 .index-aboutMe {
   height: auto;
   margin-bottom: 10vh;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
 }
-.index-aboutMe div {
+.index-aboutMe .aboutMe-content {
   /* 裝打招呼+個人照片的容器 */
   width: 90vw;
   height: auto;
@@ -455,19 +506,7 @@ section {
   /* 定位裝飾雲 */
   position: relative;
 }
-.index-aboutMe div::before {
-  /* 打招呼裝飾雲 */
-  position: absolute;
-  content: url("../../images/decorate-aboutMe02.png");
-  display: block;
-  width: auto;
-  height: auto;
-  left: 12vw;
-  bottom: -25vh;
-  z-index: -1;
-  animation: CloudFloat 120s 0s 1;
-}
-.index-aboutMe div::after {
+.index-aboutMe .aboutMe-content::after {
   position: absolute;
   content: url("../../images/decorate-aboutMe03.png");
   background-size: 10vw;
@@ -478,28 +517,52 @@ section {
   bottom: 15vh;
   z-index: -3;
 }
-.index-aboutMe div p {
+.index-aboutMe .aboutMe-content .content-intro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 350px));
+  row-gap: 20px;
+  justify-items: center;
+  align-items: stretch;
+  animation: CloudFloat 150s 0s 1;
+}
+.index-aboutMe .aboutMe-content .content-intro::after {
+  /* 打招呼裝飾雲 */
+  position: absolute;
+  content: url(../../images/decorate-aboutMe02.png);
+  display: block;
+  scale: 100%;
+  width: auto;
+  height: auto;
+  left: -20%;
+  top: -40%;
+  z-index: -1;
+}
+@media (max-width: 1440px) {
+  .index-aboutMe .aboutMe-content .content-intro::after {
+    left: -30%;
+  }
+}
+.index-aboutMe .aboutMe-content .content-intro h3 {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+}
+.index-aboutMe .aboutMe-content .content-intro p {
   /* 打招呼 */
-  width: 20vw;
-  height: 20vh;
+  width: 72%;
+  height: 20%;
   /* display: block; */
   position: relative;
   text-align: center;
-  line-height: 20vh;
+  line-height: 50px;
+  grid-column: 1/3;
+  grid-row: 2;
 }
-.index-aboutMe div p::after {
-  /* 打招呼裝飾雲 */
-  position: absolute;
-  content: url(../../images/decorate-aboutMe01.png);
-  display: block;
-  width: 50%;
-  height: auto;
-  left: -130px;
-  bottom: -65px;
-  z-index: -1;
-  animation: CloudFloat 150s 0s 1;
+.index-aboutMe .aboutMe-content .content-intro a {
+  grid-column: 2;
+  grid-row: 3;
 }
-.index-aboutMe div img {
+.index-aboutMe .aboutMe-content img {
   /* 個人照片 */
   width: 30%;
   z-index: -2;
@@ -508,7 +571,7 @@ section {
 /* 首頁-portfolio容器:標題+div */
 .index-portfolio {
   height: auto;
-  gap: 10vh;
+  gap: 50px;
 }
 
 /* 裝介紹作品集的容器(img+div) */
@@ -568,7 +631,7 @@ section {
 
 /*  */
 .index-noteContainer {
-  width: 80%;
+  width: 65%;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -580,40 +643,38 @@ section {
 
 /* 簡略文章元件 */
 .simple-learnNoteComponent {
-  width: auto;
-  min-width: 300px;
+  width: 300px;
   min-height: 185px;
   height: fit-content;
-  color: rgb(244, 239, 233);
+  color: rgb(12, 90, 103);
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 20px;
-  position: relative;
+  row-gap: 19px;
   background-image: url(../../images/simple_learnNote.png);
   background-repeat: no-repeat;
   background-position: center;
 }
+.simple-learnNoteComponent h3 {
+  max-width: 80%;
+  height: 60px;
+  line-height: 60px;
+  overflow: hidden;
+  text-emphasis: text;
+}
+.simple-learnNoteComponent .hugTag {
+  width: 300px;
+  height: 30px;
+  position: relative;
+}
 .simple-learnNoteComponent .tag-card {
   /* 相對位置 */
   position: absolute;
-  right: 150px;
-  bottom: 40px;
+  right: 38%;
+  bottom: 0;
   color: rgb(11, 34, 40);
-}
-@media (max-width: 1440px) {
-  .simple-learnNoteComponent .tag-card {
-    right: 140px;
-    bottom: 40px;
-  }
-}
-@media (min-width: 2560px) {
-  .simple-learnNoteComponent .tag-card {
-    right: 290px;
-    bottom: 40px;
-  }
 }
 
 /* 首頁-聯繫我 */
@@ -730,25 +791,6 @@ section {
 }
 .section-content .contentContainer .portfolio-file {
   width: 45%;
-}
-.section-content .contentContainer .tag-card {
-  /* 相對位置 */
-  position: sticky;
-  right: 125px;
-  bottom: 20px;
-  color: rgb(11, 34, 40);
-}
-@media (max-width: 1440px) {
-  .section-content .contentContainer .tag-card {
-    right: 120px;
-    bottom: 40px;
-  }
-}
-@media (min-width: 2560px) {
-  .section-content .contentContainer .tag-card {
-    right: 120px;
-    bottom: 40px;
-  }
 }
 
 .portfolio-file {
