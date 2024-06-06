@@ -120,6 +120,9 @@ main{
     flex: 1;
     width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    //row-gap: 50px;
     
 }
 
@@ -308,7 +311,7 @@ section {
 }
 /* banner */
 .index-banner {
-    height: 547px;
+    height: 447px;
     margin-bottom: 5vw;
 
     /* 定位裝飾 */
@@ -507,13 +510,14 @@ section {
 .index-portfolio {
     height: auto;
     gap: 50px;
+    margin-bottom: 10vh;
 }
 /* 裝介紹作品集的容器(img+div) */
 .index-portfolioInfo {
     width: 100%;
     height: auto;
     background-image: url(../../images/index-portfolio.png);
-    background-size: 85vw 28vw;
+    background-size: 70% 100%;
     background-repeat: no-repeat;
     background-position: center;
 
