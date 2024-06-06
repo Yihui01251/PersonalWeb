@@ -4,7 +4,7 @@
 $color-sky:rgba(200, 219, 225, 1);
 $color-ocean:rgba(128, 183, 190, 1);
 $color-wave:rgba(12, 90, 103, 1);
-$color-sunset:rgba(246, 207, 168, 1);
+$color-sunset:rgba(251, 234, 218, 1);
 $color-beach:rgba(233, 217, 204, 1);
 $color-desert:rgba(189, 170, 156, 1);
 $color-beach-white-s:rgba(244, 239, 233, 0.8);
@@ -13,22 +13,29 @@ $color-beach-white-s:rgba(244, 239, 233, 0.8);
 
 // 字體顏色
 $font-color-deepBlue:rgba(11, 34, 40, 1);
-$font-color-white-s:rgba(244, 239, 233, 1);
+$font-color-white:rgba(244, 239, 233, 1);
+$font-color-wave:rgba(12, 90, 103, 1);
 
 //輔助字色
 $second-color-black: #000000;
 $second-color-white: #ffffff;
 
 // 按鈕顏色
-$btn-color-grey:rgba(79, 79, 79, 1);
+$btn-color-grey:rgba(79, 79, 79, 1); 
 $btn-color-white:rgba(244, 239, 233, 1);
-$btn-color-sunset:rgba(246, 207, 168, 1);
+$btn-color-sunset:rgba(246, 226, 176, 1);
 
 //hover按鈕顏色
 
 //背景色
-$background-color-sky:rgba(200, 219, 225, 1); 
+$background-color-sky:rgba(200, 219, 225, 1);
+$background-color-beach-white:rgba(244, 239, 233, 1);
 
+//背景色漸層
+$background-color-Linear-sky:linear-gradient(#F2F8FB 0%,#D3E2E7 40%,#BED7DB 100%);
+$background-color-Linear-shallowSea:linear-gradient(rgba(172, 211, 222, 0.25) 15%,rgba(152, 198, 205, 0.3) 35%,rgba(186, 211, 213, 0.53) 60%,rgba(144, 192, 198, 0.45) 80%,rgba(242, 237, 232, 0.65) 100%);
+$background-color-Linear-deepSea:linear-gradient(-45deg,rgba(178, 206, 210, 0.5) 15%,rgba(126, 176, 183, 0.5) 35%,rgba(125, 173, 181, 0.5) 60%,rgba(128, 183, 190, 0.5) 80%,rgba(12, 90, 103, 0.5) 100%);
+$background-color-Linear-beach:linear-gradient(rgba(233, 217, 204, 1) 0%,rgba(244, 239, 233, 0.8) 100%);
 //背景色 透明
 $background-color-beach-s:rgba(233, 217, 204, 0.8);
 $background-color-beach-white-s:rgba(244, 239, 233, 0.8);
@@ -61,6 +68,7 @@ $breakpoint-lg:"min-width:821px";
 $border-radius-5 : 5px;
 $border-radius-10 : 10px;
 $border-radius-20 : 20px;
+$border-radius-tag : 30px;
 $border-radius-btn : 50px;
 $border-radius-60 : 60px;
 $border-radius-90 : 90px;
