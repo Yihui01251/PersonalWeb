@@ -475,7 +475,7 @@ section {
 .index-banner .banner {
   /* {`Yihui’s 個人網站`}方塊*/
   width: 45%;
-  margin-top: 50px;
+  margin-top: 100px;
   animation: scaleRotate 5s 0s infinite;
 }
 .index-banner::before {
