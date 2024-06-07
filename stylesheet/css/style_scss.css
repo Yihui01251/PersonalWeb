@@ -429,7 +429,7 @@ section {
     scale: inherit;
   }
   50% {
-    transform: translate(15vw, 10vw);
+    transform: translate(15vw, 11vw);
     z-index: 1;
   }
   70% {
@@ -446,6 +446,7 @@ section {
 .index-banner {
   height: 447px;
   margin-bottom: 5vw;
+  margin-top: 50px;
   /* 定位裝飾 */
   position: relative;
   /* 增加裝飾 */
@@ -473,7 +474,7 @@ section {
 }
 .index-banner .banner {
   /* {`Yihui’s 個人網站`}方塊*/
-  width: 50%;
+  width: 45%;
   margin-top: 50px;
   animation: scaleRotate 5s 0s infinite;
 }
