@@ -17,7 +17,7 @@
       crossorigin="anonymous"
     /> -->
     <!-- swiper -->   
-    <link rel="stylesheet" src=".././node_modules/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" src="./node_modules/swiper/swiper-bundle.min.css" />
     <title>怡慧的個人網站</title>
     <style>
       .swiper-container {
@@ -155,15 +155,14 @@
         <a href="./learningNote.html" class="button">更多</a>
       </section>
 
-      <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+      <script src="node_modules/swiper/swiper-bundle.min.js"></script>
 
       <script>
-      
         var swiper = new Swiper(".mySwiper", {
           effect: "coverflow",
           grabCursor: true,
           centeredSlides: true,
-          slidesPerView: "auto",
+          slidesPerView: "center",
           coverflowEffect: {
             rotate: 50,
             stretch: 0,
