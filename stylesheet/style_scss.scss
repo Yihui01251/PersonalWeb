@@ -97,7 +97,8 @@ header {
     height: 50px;
     border-radius: 60px;
     padding: 10px;
-    background-color: $color-sunset;
+    background-color: rgba( 255, 247 ,219 , 1);
+    //rgb(255 247 219)
 }
 /* 連結容器 */
 #menu {
@@ -119,6 +120,9 @@ main{
     flex: 1;
     width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    //row-gap: 50px;
     
 }
 
@@ -307,7 +311,7 @@ section {
 }
 /* banner */
 .index-banner {
-    height: 547px;
+    height: 447px;
     margin-bottom: 5vw;
 
     /* 定位裝飾 */
@@ -344,7 +348,7 @@ section {
     }
     .banner {
         /* {`Yihui’s 個人網站`}方塊*/
-        width: 900px;
+        width: 50%;
         margin-top: 50px;
         animation: scaleRotate 5s 0s infinite;
     }
@@ -506,13 +510,14 @@ section {
 .index-portfolio {
     height: auto;
     gap: 50px;
+    margin-bottom: 10vh;
 }
 /* 裝介紹作品集的容器(img+div) */
 .index-portfolioInfo {
-    width: 100vw;
-    height: 60vh;
+    width: 100%;
+    height: auto;
     background-image: url(../../images/index-portfolio.png);
-    background-size: 85vw 28vw;
+    background-size: 70% 100%;
     background-repeat: no-repeat;
     background-position: center;
 
@@ -521,6 +526,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 5vw;
+    padding: 15px 0px;
 
     /* 書 */
     img {
@@ -537,8 +543,10 @@ section {
 
     display: flex;
     flex-direction: column;
-    gap: 5vh;
+    gap: 2vh;
     align-items: flex-end;
+    color: $font-color-white;
+    margin: 10px 0px;
 }
 /* (你能看到...)容器 */
 .index-portfolioInfo-content-infoTitle {
@@ -567,7 +575,7 @@ section {
 }
 /*  */
 .index-noteContainer {
-    width: 65%;
+    width: 75%;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -591,7 +599,7 @@ section {
     justify-content: center;
     align-items: center;
     row-gap: 19px;
-
+    padding-top: 38px;
    
     background-image: url(../../images/simple_learnNote.png);
     background-repeat: no-repeat;
